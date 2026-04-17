@@ -7,3 +7,7 @@ export interface Post {
   category: Category;
   createdDate: string;
 }
+
+export type PostFormValue = Omit<Post, 'id' | 'createdDate' | 'category'> & {
+  categoryId: string;
+};

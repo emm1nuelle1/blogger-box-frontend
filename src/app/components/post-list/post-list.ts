@@ -15,9 +15,19 @@ export class PostListComponent implements OnInit {
   constructor(private postService: PostService, private cdr: ChangeDetectorRef) { }
 
   ngOnInit(): void {
+    this.loadPosts();
+  }
+
+  loadPosts(): void {
     this.postService.getAll().subscribe((posts) => {
       this.posts = posts;
       this.cdr.detectChanges();
+    });
+  }
+
+  onDelete(id: string): void {
+    this.postService.delete(id).subscribe(() => {
+      this.loadPosts();
     });
   }
 }

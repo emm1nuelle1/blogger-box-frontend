@@ -1,7 +1,9 @@
 import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+
+import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
@@ -9,6 +11,7 @@ import { TopBarComponent } from './components/top-bar/top-bar';
 import { PostListComponent } from './components/post-list/post-list';
 import { PostListItemComponent } from './components/post-list-item/post-list-item';
 import { AddPostComponent } from './components/add-post/add-post';
+import { PostDetailComponent } from './components/post-detail/post-detail';
 
 @NgModule({
   declarations: [
@@ -16,12 +19,14 @@ import { AddPostComponent } from './components/add-post/add-post';
     TopBarComponent,
     PostListComponent,
     PostListItemComponent,
-    AddPostComponent
+    AddPostComponent,
+    PostDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
+    RouterModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [

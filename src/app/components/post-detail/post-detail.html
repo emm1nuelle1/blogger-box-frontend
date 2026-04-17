@@ -1,0 +1,46 @@
+<div class="container mt-4">
+  <div *ngIf="loading" class="text-center my-5">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <div *ngIf="!loading && post" class="row justify-content-center">
+    <div class="col-lg-8">
+      <article class="card shadow-sm border-0">
+        <div class="card-body p-4 p-md-5">
+          <header class="mb-4">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge bg-success rounded-pill" *ngIf="post.category">{{ post.category.name }}</span>
+              <small class="text-muted">
+                <i class="bi bi-calendar3 me-1"></i>{{ post.createdDate | date:'longDate' }}
+              </small>
+            </div>
+            <h1 class="display-5 fw-bold mb-3">{{ post.title }}</h1>
+            <hr class="my-4">
+          </header>
+
+          <section class="post-content fs-5 text-secondary" style="line-height: 1.8; white-space: pre-wrap;">
+            {{ post.content }}
+          </section>
+
+          <footer class="mt-5 pt-4 border-top">
+            <div class="d-flex gap-2">
+              <button class="btn btn-outline-primary" (click)="goBack()">
+                <i class="bi bi-arrow-left me-1"></i> Back to List
+              </button>
+              <a class="btn btn-outline-secondary" [routerLink]="['/edit-post', post.id]">
+                <i class="bi bi-pencil me-1"></i> Edit
+              </a>
+            </div>
+          </footer>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div *ngIf="!loading && !post" class="text-center my-5">
+    <h3 class="text-muted">Post not found.</h3>
+    <button class="btn btn-primary mt-3" (click)="goBack()">Back to Home</button>
+  </div>
+</div>

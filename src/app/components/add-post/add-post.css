@@ -7,3 +7,11 @@
   border-color: #198754;
   box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.25);
 }
+.add-post-card {
+  border-radius: 1rem;
+}
+
+textarea.form-control {
+  min-height: 14rem;
+  resize: vertical;
+}

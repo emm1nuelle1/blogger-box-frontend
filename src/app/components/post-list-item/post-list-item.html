@@ -5,11 +5,23 @@
       <span class="badge bg-success rounded-pill ms-2" *ngIf="post.category">{{ post.category.name }}</span>
     </div>
     <p class="card-text text-muted flex-grow-1">{{ post.content | slice:0:150 }}{{ post.content.length > 150 ? '...' : '' }}</p>
-    <div class="mt-auto">
-      <hr>
-      <small class="text-body-secondary">
-        <i class="bi bi-calendar3 me-1"></i>{{ post.createdDate | date:'longDate' }}
-      </small>
+    <div class="mt-auto pt-3 border-top">
+      <div class="d-flex justify-content-between align-items-center">
+        <small class="text-body-secondary">
+          <i class="bi bi-calendar3 me-1"></i>{{ post.createdDate | date:'shortDate' }}
+        </small>
+        <div class="btn-group btn-group-sm">
+          <a class="btn btn-outline-primary" [routerLink]="['/posts', post.id]" title="View Details">
+            <i class="bi bi-eye"></i>
+          </a>
+          <a class="btn btn-outline-secondary" [routerLink]="['/edit-post', post.id]" title="Edit">
+            <i class="bi bi-pencil"></i>
+          </a>
+          <button class="btn btn-outline-danger" (click)="onDelete()" title="Delete">
+            <i class="bi bi-trash"></i>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </div>

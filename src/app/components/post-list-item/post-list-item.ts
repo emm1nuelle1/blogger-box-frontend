@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Post } from '../../data/post';
 
 @Component({
@@ -9,4 +9,11 @@ import { Post } from '../../data/post';
 })
 export class PostListItemComponent {
   @Input() post!: Post;
+  @Output() deleteEvent = new EventEmitter<string>();
+
+  onDelete(): void {
+    if (confirm('Are you sure you want to delete this post?')) {
+      this.deleteEvent.emit(this.post.id);
+    }
+  }
 }

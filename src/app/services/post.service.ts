@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { Post } from '../data/post';
+import { Post, PostFormValue } from '../data/post';
 import { environment } from '../../environments/environment';
 
 @Injectable({
@@ -26,13 +26,13 @@ export class PostService {
     );
   }
 
-  create(post: { title: string; content: string; categoryId: string }): Observable<Post> {
+  create(post: PostFormValue): Observable<Post> {
     return this.http.post<Post>(this.postsUrl, post).pipe(
       catchError(this.handleError<Post>('create'))
     );
   }
 
-  update(id: string, post: { title: string; content: string; categoryId: string }): Observable<Post> {
+  update(id: string, post: PostFormValue): Observable<Post> {
     return this.http.put<Post>(`${this.postsUrl}/${id}`, post).pipe(
       catchError(this.handleError<Post>('update'))
     );
