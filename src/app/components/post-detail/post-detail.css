@@ -4,6 +4,8 @@
 
 article {
   transition: transform 0.2s;
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.95);
 }
 
 article:hover {

@@ -9,9 +9,16 @@
 }
 .add-post-card {
   border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.95);
 }
 
 textarea.form-control {
   min-height: 14rem;
   resize: vertical;
+}
+
+.form-control,
+.form-select {
+  border-radius: 0.85rem;
+  padding: 0.85rem 1rem;
 }

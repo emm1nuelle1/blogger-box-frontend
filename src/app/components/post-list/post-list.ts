@@ -9,7 +9,6 @@ import { Post } from '../../data/post';
   styleUrls: ['./post-list.css']
 })
 export class PostListComponent implements OnInit {
-
   posts: Post[] = [];
 
   constructor(private postService: PostService, private cdr: ChangeDetectorRef) { }

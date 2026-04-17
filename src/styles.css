@@ -1,7 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
 
+:root {
+  --bb-bg: #f4f7f5;
+  --bb-surface: rgba(255, 255, 255, 0.9);
+  --bb-text: #1f2937;
+  --bb-muted: #6b7280;
+  --bb-accent: #198754;
+}
+
+html,
 body {
-  background-color: #f8f9fa;
+  background:
+    radial-gradient(circle at top left, rgba(25, 135, 84, 0.08), transparent 24rem),
+    linear-gradient(180deg, #f8fbf8 0%, var(--bb-bg) 100%);
+  color: var(--bb-text);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn,
+.form-control,
+.form-select,
+.card {
+  box-shadow: none;
 }

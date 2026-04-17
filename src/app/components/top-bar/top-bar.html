@@ -1,11 +1,12 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
-  <div class="container-fluid">
-    <a class="navbar-brand fw-bold fs-4" [routerLink]="['/']">
-      <i class="bi bi-postcard-heart me-2"></i>Blogger Box
+<nav class="navbar navbar-expand-lg topbar-shell sticky-top">
+  <div class="container py-2">
+    <a class="navbar-brand fw-semibold fs-4 d-flex align-items-center gap-2" [routerLink]="['/']">
+      <i class="bi bi-postcard topbar-brand-icon"></i>
+      <span>Blogger Box</span>
     </a>
     <div class="d-flex">
-      <button class="btn btn-outline-light" type="button" [routerLink]="['/add-post']">
-        <i class="bi bi-pencil-square me-1"></i> Write a Post
+      <button class="btn btn-outline-success px-3" type="button" [routerLink]="['/add-post']">
+        <i class="bi bi-pencil-square me-1"></i>Write
       </button>
     </div>
   </div>

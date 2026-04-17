@@ -1,1 +1,18 @@
-/* top-bar styles */
+.topbar-shell {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.navbar-brand {
+  color: #1f2937;
+}
+
+.navbar-brand:hover {
+  color: #111827;
+}
+
+.topbar-brand-icon {
+  color: #198754;
+  font-size: 1.3rem;
+}
